@@ -1,0 +1,32 @@
+{
+  "name": "webpage-snapshot-tool",
+  "version": "0.0.1",
+  "description": "This utility will take a number snapshots of a webpage and save them locally.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jxmot/webpage-snapshot-tool.git"
+  },
+  "engines": {
+    "node": ">=12.16.1"
+  },
+  "keywords": [
+    "puppeteer",
+    "webpage-snapsnot",
+    "page-snapshot",
+    "snapshot"
+  ],
+  "author": "Jim Motyl (jamesmotyl.com)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jxmot/webpage-snapshot-tool/issues"
+  },
+  "homepage": "https://github.com/jxmot/webpage-snapshot-tool#readme",
+  "dependencies": {
+    "puppeteer": "^9.1.1",
+    "simple-text-log": "0.0.1"
+  }
+}
