@@ -21,15 +21,18 @@ When this application runs, it will:
 
 ### Installation
 
-
+1) download this repository
+2) navigate to its containing folder (i.e. `webpage-snapshot-tool`)
+3) install node modules - **`npm install`**
+4) edit/create a target config file
 
 ### Usage 
 
 Use the following command:
 
-**`node index.js target_cfg.js`**
+**`node index.js ./target_cfg.js`**
 
-Where: `target_cfg.js` is a configuration for the targeted web page. That file should contain:
+Where: **`./`**`target_cfg.js` is a configuration for the targeted web page. That file should contain:
 
 ```
 'use strict';
