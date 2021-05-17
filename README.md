@@ -79,3 +79,34 @@ They are in order of most to least popular according to the following sources -
 * Creates an image for each entry in `views[]`
 * Creates a run-time log of operations
 
+The following will be seen on the console, and logged to the file specified in `runlogopt.js` :
+
+```
+***********************************
+begin....
+beginning 8 desktop snap shots....
+queuing: target = https://example.com/   name = example-1366x768
+queuing: target = https://example.com/   name = example-1920x1080
+queuing: target = https://example.com/   name = example-1280x800
+queuing: target = https://example.com/   name = example-1024x768
+queuing: target = https://example.com/   name = example-1536x864
+queuing: target = https://example.com/   name = example-1440x900
+queuing: target = https://example.com/   name = example-1100x900
+queuing: target = https://example.com/   name = example-825x900
+snap shots are in the queue...
+saved - example-1024x768.png
+saved - example-1280x800.png
+saved - example-1440x900.png
+saved - example-825x900.png
+saved - example-1920x1080.png
+saved - example-1366x768.png
+saved - example-1536x864.png
+saved - example-1100x900.png
+```
+
+For additional information about *logging* in this application see:
+
+* Simple Text Log
+  * github: <https://github.com/jxmot/simple-text-log>
+  * npmjs: <https://www.npmjs.com/package/simple-text-log>
+
