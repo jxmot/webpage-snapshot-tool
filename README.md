@@ -110,3 +110,5 @@ For additional information about *logging* in this application see:
   * github: <https://github.com/jxmot/simple-text-log>
   * npmjs: <https://www.npmjs.com/package/simple-text-log>
 
+---
+<img src="http://webexperiment.info/extcounter/mdcount.php?id=webpage-snapshot-tool">
