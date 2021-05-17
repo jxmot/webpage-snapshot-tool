@@ -12,6 +12,7 @@ node_modules
 # misc stuff i want to ignore -
 _*.*
 /logs/*.json
+*.png
 *.log
 *.bat
 error_log
@@ -23,4 +24,3 @@ x.*
 *.session
 # Links (FF)
 *.url
-nbproject/
