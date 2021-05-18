@@ -76,25 +76,6 @@ if(process.argv.length > 2) {
 // https://pptr.dev/#?product=Puppeteer&version=v9.1.1&show=outline
 const puppeteer = require('puppeteer');
 
-// https://gs.statcounter.com/screen-resolution-stats/desktop/north-america
-//      AND
-// https://www.w3schools.com/browsers/browsers_display.asp
-// 
-// in order of most to least popular
-const views = [
-        {width:1366, height:768},
-        {width:1920, height:1080},
-        {width:1280, height:800},
-// don't duplicate 'width' in items
-//        {width:1280, height:1024},
-        {width:1024, height:768},
-        {width:1536, height:864},
-//        {width:1280, height:720},
-        {width:1440, height:900},
-        // extras, some smaller sizes...
-        {width:1100, height:900},
-        {width:825, height:900}
-];
 // the destination of the screenshot images...
 // make sure it's a valid path, if not then exit
 const imgpath  = ((typeof targetopt.imgpath === 'string') && (targetopt.imgpath.length >= 2) ? targetopt.imgpath : './');
@@ -115,8 +96,8 @@ const fullpage = targetopt.fullpage;
 // where?
 const target = targetopt.target;
 // here we go...
-log(`beginning ${views.length} desktop snapshots....`);
-for(let idx = 0; idx < views.length; idx++) {
+log(`beginning ${targetopt.views.length} desktop snapshots....`);
+for(let idx = 0; idx < targetopt.views.length; idx++) {
     // create the name of the screenshot file
     let name;
     // grab the domain name from the target
@@ -130,7 +111,7 @@ for(let idx = 0; idx < views.length; idx++) {
         }
     }
     // add the viewport dimensions to the name
-    name = name + '-' + views[idx].width + 'x' + views[idx].height;
+    name = name + '-' + targetopt.views[idx].width + 'x' + targetopt.views[idx].height;
     log(`queuing: target = ${target}   name = ${name}`);
 
     (async () => {
@@ -140,9 +121,9 @@ for(let idx = 0; idx < views.length; idx++) {
         // ONLY has mobile emulation!!!
         //  await page.emulate(puppeteer.devices['iPhone 6']);
 
-        await page.setViewport(views[idx]);
+        await page.setViewport(targetopt.views[idx]);
 
-        await page.goto(target);
+        await page.goto(target,{waitUntil:'networkidle0'});
         // give time for page load and render
         await page.waitForTimeout(5000);
         await page.screenshot({path:`${imgpath}${name}${imgextn}`, fullPage: fullpage}).then(log(`saved - ${name}${imgextn}`));
