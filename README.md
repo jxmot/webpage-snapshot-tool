@@ -39,11 +39,9 @@ Where: **`./`**`target_cfg.js` is a configuration for the targeted web page. Tha
 module.exports = {
     target:'https://example.com/',
     fullpage:true,
-    // these are optional, and can be omitted or
-    // commented out. The folders in imgpath must
-    // exist prior to running the app.
-    imgpath:'./screenshots/',   // default = ./  but MUST end with '/'!
-    imgextn:'.png',             // default .png
+    // how long (in ms) to wait for the page, gives 
+    // time for fades and other effects to run.
+    godelay:5000,
     // https://gs.statcounter.com/screen-resolution-stats/desktop/north-america
     //      AND
     // https://www.w3schools.com/browsers/browsers_display.asp
@@ -62,15 +60,22 @@ module.exports = {
         // extras, some smaller sizes...
         {width:1100, height:900},
         {width:825, height:900}
-    ]
+    ],
+    // these are optional, and can be omitted or
+    // commented out. The folders in imgpath must
+    // exist prior to running the app.
+    imgpath:'./screenshots/',   // default = ./  but MUST end with '/'!
+    imgextn:'.png'              // default .png
 };
+
 ```
 
 * `target` = the full URL, including `HTTP[s]`. Query arguments are ignored but passed on to the page.
 * `fullpage` = true or false, if **true** then the entire page is accessed, it does not stop at the specified height in `views[]`.
+* `godelay` = the number of milliseconds to wait after loading the page. If `0` then there will be no waiting. The value that goes here depends on the page and any load-time effects it might contain.
+* `views[]` = an array of `{width:?,height:?}` objects. Edit as necessary.
 * `imgpath` = optional, the path to where the snapshots will be saved. The default is './'
 * `imgextn` = options, the extension(type) of image file. The default is '.png'
-* `viewa[]` = an array of `{width:?,height:?}` objects. Edit as necessary.
 
 **NOTES**: 
 1) For most single-page sites `fullpage` should be true.
