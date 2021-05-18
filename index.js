@@ -138,6 +138,7 @@ for(let idx = 0; idx < views.length; idx++) {
         await page.setViewport(views[idx]);
 
         await page.goto(target);
+        // give time for page load and render
         await page.waitForTimeout(5000);
         await page.screenshot({path:`${imgpath}${name}${imgextn}`, fullPage: fullpage}).then(log(`saved - ${name}${imgextn}`));
 
