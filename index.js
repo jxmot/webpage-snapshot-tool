@@ -115,7 +115,7 @@ const fullpage = targetopt.fullpage; //true;
 // where?
 const target = targetopt.target; //'https://webexperiment.info/nfc/';
 // here we go...
-log(`beginning ${views.length} desktop snap shots....`);
+log(`beginning ${views.length} desktop snapshots....`);
 for(let idx = 0; idx < views.length; idx++) {
     // create the name of the screenshot file
     let name;
