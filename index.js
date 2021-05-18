@@ -117,17 +117,16 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
     (async () => {
         const browser = await puppeteer.launch({headless:true});
         const page = await browser.newPage();
-
         // ONLY has mobile emulation!!!
         //  await page.emulate(puppeteer.devices['iPhone 6']);
-
+        // the alternative is to provide our own views...
         await page.setViewport(targetopt.views[idx]);
-
+        // get the page and wait for things to settle
         await page.goto(target,{waitUntil:'networkidle0'});
         // give time for page load and render
         await page.waitForTimeout(5000);
         await page.screenshot({path:`${imgpath}${name}${imgextn}`, fullPage: fullpage}).then(log(`saved - ${name}${imgextn}`));
-
+        // we're done with this one
         await browser.close();
     })();
 }
