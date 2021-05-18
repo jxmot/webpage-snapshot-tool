@@ -109,12 +109,13 @@ if (!dir.isDirectory()) {
 
 // default screenshot image extension
 const imgextn  = (typeof targetopt.imgextn === 'string' ? targetopt.imgextn : '.png');
+log(`saving screenshots to ${imgextn}`);
 // full size for screenshot?
 const fullpage = targetopt.fullpage; //true;
 // where?
 const target = targetopt.target; //'https://webexperiment.info/nfc/';
 // here we go...
-log(`beginning ${views.length} desktop snap shots....`);
+log(`beginning ${views.length} desktop snapshots....`);
 for(let idx = 0; idx < views.length; idx++) {
     // create the name of the screenshot file
     let name;
@@ -122,14 +123,18 @@ for(let idx = 0; idx < views.length; idx++) {
     if(target.includes('www.')) {
         name = target.split('//www.')[1].split('.')[0];
     } else {
-        name = target.split('//')[1].split('.')[0];
+        if((target.includes('.')) && (!target.includes('.php')) && (!target.includes('.htm'))) {
+            name = target.split('//')[1].split('.')[0];
+        } else {
+            name = target.split('//')[1].split('/')[0];
+        }
     }
     // add the viewport dimensions to the name
     name = name + '-' + views[idx].width + 'x' + views[idx].height;
     log(`queuing: target = ${target}   name = ${name}`);
 
     (async () => {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({headless:true});
         const page = await browser.newPage();
 
         // ONLY has mobile emulation!!!
@@ -145,5 +150,5 @@ for(let idx = 0; idx < views.length; idx++) {
         await browser.close();
     })();
 }
-log('snap shots are in the queue...');
+log('snapshots are in the queue...');
 
