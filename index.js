@@ -109,6 +109,7 @@ if (!dir.isDirectory()) {
 
 // default screenshot image extension
 const imgextn  = (typeof targetopt.imgextn === 'string' ? targetopt.imgextn : '.png');
+log(`saving screenshots to ${imgextn}`);
 // full size for screenshot?
 const fullpage = targetopt.fullpage; //true;
 // where?
