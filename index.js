@@ -104,6 +104,8 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
     if(target.includes('www.')) {
         name = target.split('//www.')[1].split('.')[0];
     } else {
+        // add extensions as needed, be sure to include 
+        // the leading '.'
         if((target.includes('.')) && (!target.includes('.php')) && (!target.includes('.htm'))) {
             name = target.split('//')[1].split('.')[0];
         } else {
@@ -112,7 +114,7 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
     }
     // add the viewport dimensions to the name
     name = name + '-' + targetopt.views[idx].width + 'x' + targetopt.views[idx].height;
-    log(`queuing: target = ${target}   file = ${name}${imgextn}`);
+    log(`queuing: target = ${target}   snapshot file = ${imgpath}${name}${imgextn}`);
 
     (async () => {
         const browser = await puppeteer.launch({headless:true});
