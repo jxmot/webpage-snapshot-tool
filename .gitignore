@@ -13,6 +13,7 @@ node_modules
 _*.*
 /logs/*.json
 *.png
+*.pdf
 *.log
 *.bat
 error_log
