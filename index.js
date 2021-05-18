@@ -112,7 +112,7 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
     }
     // add the viewport dimensions to the name
     name = name + '-' + targetopt.views[idx].width + 'x' + targetopt.views[idx].height;
-    log(`queuing: target = ${target}   name = ${name}`);
+    log(`queuing: target = ${target}   file = ${name}${imgextn}`);
 
     (async () => {
         const browser = await puppeteer.launch({headless:true});
