@@ -124,11 +124,11 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
         // get the page and wait for things to settle
         await page.goto(target,{waitUntil:'networkidle0'});
         // give time for page load and render
-        await page.waitForTimeout(5000);
+        await page.waitForTimeout(targetopt.godelay);
         await page.screenshot({path:`${imgpath}${name}${imgextn}`, fullPage: fullpage}).then(log(`saved - ${name}${imgextn}`));
         // we're done with this one
         await browser.close();
     })();
 }
-log('snapshots are in the queue...');
+log(`${targetopt.views.length} snapshots are in the queue`);
 
