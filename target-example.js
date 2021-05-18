@@ -2,11 +2,9 @@
 module.exports = {
     target:'https://example.com/',
     fullpage:true,
-    // these are optional, and can be omitted or
-    // commented out. The folders in imgpath must
-    // exist prior to running the app.
-    imgpath:'./screenshots/',   // default = ./  but MUST end with '/'!
-    imgextn:'.png',             // default .png
+    // how long (in ms) to wait for the page, gives 
+    // time for fades and other effects to run.
+    godelay:5000,
     // https://gs.statcounter.com/screen-resolution-stats/desktop/north-america
     //      AND
     // https://www.w3schools.com/browsers/browsers_display.asp
@@ -25,5 +23,10 @@ module.exports = {
         // extras, some smaller sizes...
         {width:1100, height:900},
         {width:825, height:900}
-    ]
+    ],
+    // these are optional, and can be omitted or
+    // commented out. The folders in imgpath must
+    // exist prior to running the app.
+    imgpath:'./screenshots/',   // default = ./  but MUST end with '/'!
+    imgextn:'.png'              // default .png
 };
