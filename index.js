@@ -111,9 +111,9 @@ if (!dir.isDirectory()) {
 const imgextn  = (typeof targetopt.imgextn === 'string' ? targetopt.imgextn : '.png');
 log(`saving screenshots to ${imgextn}`);
 // full size for screenshot?
-const fullpage = targetopt.fullpage; //true;
+const fullpage = targetopt.fullpage;
 // where?
-const target = targetopt.target; //'https://webexperiment.info/nfc/';
+const target = targetopt.target;
 // here we go...
 log(`beginning ${views.length} desktop snapshots....`);
 for(let idx = 0; idx < views.length; idx++) {
