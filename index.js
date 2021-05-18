@@ -123,7 +123,11 @@ for(let idx = 0; idx < views.length; idx++) {
     if(target.includes('www.')) {
         name = target.split('//www.')[1].split('.')[0];
     } else {
-        name = target.split('//')[1].split('.')[0];
+        if((target.includes('.')) && (!target.includes('.php')) && (!target.includes('.htm'))) {
+            name = target.split('//')[1].split('.')[0];
+        } else {
+            name = target.split('//')[1].split('/')[0];
+        }
     }
     // add the viewport dimensions to the name
     name = name + '-' + views[idx].width + 'x' + views[idx].height;
