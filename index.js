@@ -134,7 +134,7 @@ for(let idx = 0; idx < views.length; idx++) {
     log(`queuing: target = ${target}   name = ${name}`);
 
     (async () => {
-        const browser = await puppeteer.launch();
+        const browser = await puppeteer.launch({headless:true});
         const page = await browser.newPage();
 
         // ONLY has mobile emulation!!!
@@ -150,5 +150,5 @@ for(let idx = 0; idx < views.length; idx++) {
         await browser.close();
     })();
 }
-log('snap shots are in the queue...');
+log('snapshots are in the queue...');
 
