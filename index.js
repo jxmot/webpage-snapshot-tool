@@ -153,5 +153,5 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
         await browser.close();
     })();
 }
-log(`${targetopt.views.length} snapshots are in the queue`);
+log(`snapshots in the queue - ${targetopt.views.length}`);
 
