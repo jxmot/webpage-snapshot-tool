@@ -113,6 +113,13 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
         }
     }
 
+    /*
+        targetopt.views[] can contain either viewport dimensions:
+            {width:950, height:1080}
+
+        OR device names:
+            {device:'Nexus 6P'}
+    */
     if(targetopt.views[idx].width) {
         // add the viewport dimensions to the name
         name = name + '-' + targetopt.views[idx].width + 'x' + targetopt.views[idx].height;
@@ -120,6 +127,7 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
     }
 
     if(targetopt.views[idx].device) {
+        // add the device name to the file name
         name = name + '-' + targetopt.views[idx].device.replace(/ /g,'_');
         log(`queuing: target = ${target}   snapshot file = ${imgpath}${name}${imgextn}`);
     }
