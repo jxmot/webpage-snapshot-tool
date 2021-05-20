@@ -141,5 +141,11 @@ For additional information about *logging* in this application see:
   * github: <https://github.com/jxmot/simple-text-log>
   * npmjs: <https://www.npmjs.com/package/simple-text-log>
 
+## Get the Puppeteer Device List
+
+The `listdevices.js` application will create a list of Puppeteer devices. Unfortunately their documentation does not contain one and they direct you to the TypeScript source file where the devices are contained. I wanted a handy device list so I created this small app. 
+
+After [Installation](#installation) you can the get list with `node listdevices.js`. A file named `devicelist.txt` will be created and the list is written to the console.
+
 ---
 <img src="http://webexperiment.info/extcounter/mdcount.php?id=webpage-snapshot-tool">
