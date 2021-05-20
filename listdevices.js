@@ -11,7 +11,7 @@
 */
 // set up run-time logging first...
 const Log = require('simple-text-log');
-const logOut = new Log({logfile:'./devicelist.txt',logsize:10485760});
+const logOut = new Log({logfile:'./devicelist.txt',logsize:0});
 // optionally also write to the console
 const logcon = true;
 function log(payload) {
