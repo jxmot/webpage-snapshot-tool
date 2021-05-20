@@ -22,7 +22,9 @@ module.exports = {
         {width:1440, height:900},
         // extras, some smaller sizes...
         {width:1100, height:900},
-        {width:825, height:900}
+        {width:825, height:900},
+        // can also select from Puppeteer's devices
+        {device:'Nexus 6P'}
     ],
     // these are optional, and can be omitted or
     // commented out. The folders in imgpath must

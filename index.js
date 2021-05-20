@@ -112,17 +112,28 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
             name = target.split('//')[1].split('/')[0];
         }
     }
-    // add the viewport dimensions to the name
-    name = name + '-' + targetopt.views[idx].width + 'x' + targetopt.views[idx].height;
-    log(`queuing: target = ${target}   snapshot file = ${imgpath}${name}${imgextn}`);
+
+    if(targetopt.views[idx].width) {
+        // add the viewport dimensions to the name
+        name = name + '-' + targetopt.views[idx].width + 'x' + targetopt.views[idx].height;
+        log(`queuing: target = ${target}   snapshot file = ${imgpath}${name}${imgextn}`);
+    }
+
+    if(targetopt.views[idx].device) {
+        name = name + '-' + targetopt.views[idx].device.replace(/ /g,'_');
+        log(`queuing: target = ${target}   snapshot file = ${imgpath}${name}${imgextn}`);
+    }
 
     (async () => {
         const browser = await puppeteer.launch({headless:true});
         const page = await browser.newPage();
         // ONLY has mobile emulation!!!
-        //  await page.emulate(puppeteer.devices['iPhone 6']);
-        // the alternative is to provide our own views...
-        await page.setViewport(targetopt.views[idx]);
+        if(targetopt.views[idx].device) {
+            await page.emulate(puppeteer.devices[targetopt.views[idx].device]);
+        } else {
+            // the alternative is to provide our own views...
+            await page.setViewport(targetopt.views[idx]);
+        }
         // get the page and wait for things to settle
         await page.goto(target,{waitUntil:'networkidle0'});
         // give time for page load and render
