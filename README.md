@@ -59,7 +59,9 @@ module.exports = {
         {width:1440, height:900},
         // extras, some smaller sizes...
         {width:1100, height:900},
-        {width:825, height:900}
+        {width:825, height:900},
+        // can also select from Puppeteer's devices
+        {device:'Nexus 6P'}
     ],
     // these are optional, and can be omitted or
     // commented out. The folders in imgpath must
@@ -99,6 +101,8 @@ They are in order of most to least popular according to the following sources -
 * <https://www.w3schools.com/browsers/browsers_display.asp>
 * <https://gs.statcounter.com/screen-resolution-stats/desktop/north-america>
 
+**NOTE**: A device can be added to the `views[]` array with `{device:'device name here'}`.
+
 ### Run-time Results
 
 * Creates an image for each entry in `views[]`
@@ -118,11 +122,13 @@ queuing: target = https://example.com/   name = example-1536x864
 queuing: target = https://example.com/   name = example-1440x900
 queuing: target = https://example.com/   name = example-1100x900
 queuing: target = https://example.com/   name = example-825x900
+queuing: target = https://example.com/   name = example-Nexus_6P
 snap shots are in the queue...
 saved - example-1024x768.png
 saved - example-1280x800.png
 saved - example-1440x900.png
 saved - example-825x900.png
+saved - example-Nexus_6P.png
 saved - example-1920x1080.png
 saved - example-1366x768.png
 saved - example-1536x864.png
