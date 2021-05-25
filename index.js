@@ -135,18 +135,44 @@ for(let idx = 0; idx < targetopt.views.length; idx++) {
     (async () => {
         const browser = await puppeteer.launch({headless:true});
         const page = await browser.newPage();
-        // ONLY has mobile emulation!!!
+
+        // use a device viewport or a custome one
         if(targetopt.views[idx].device) {
             await page.emulate(puppeteer.devices[targetopt.views[idx].device]);
-        } else {
-            // the alternative is to provide our own views...
-            await page.setViewport(targetopt.views[idx]);
         }
         // get the page and wait for things to settle
         await page.goto(target,{waitUntil:'networkidle0'});
+
         // give time for page load and render
         if(targetopt.godelay && targetopt.godelay > 0) {
             await page.waitForTimeout(targetopt.godelay);
+        }
+
+        log(`fullpage = ${(fullpage ? 'true' : 'false')}`);
+
+        // custom viewport, render full page?
+        if(fullpage === true) {
+            // NOTE: this is an attempt to get a Bootstrap 4
+            // sticky footer to render at the bottom. 
+            let height = await page.evaluate(
+                () => document.documentElement.offsetHeight
+                //() => document.documentElement.scrollHeight
+            );
+
+            if(targetopt.views[idx].device) {
+                let w = puppeteer.devices[targetopt.views[idx].device].viewport.width;
+                await page.setViewport({width:w, height:height+1})
+                    .then(log(`viewport set: ${w} X ${height+1}`));
+            } else {
+                await page.setViewport({width:targetopt.views[idx].width, height:height+1})
+                    .then(log(`viewport set: ${targetopt.views[idx].width} X ${height+1}`));
+            }
+        } else {
+            if(!targetopt.views[idx].device) {
+                // not full page, use the viewport settings
+                await page.setViewport(targetopt.views[idx])
+                    .then(log(`viewport set: ${targetopt.views[idx].width} X ${targetopt.views[idx].height}`));
+            }
         }
         await page.screenshot({path:`${imgpath}${name}${imgextn}`, fullPage: fullpage}).then(log(`saved - ${name}${imgextn}`));
         // we're done with this one
