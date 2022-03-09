@@ -10,12 +10,24 @@ Galaxy S III - 360 X 640
 Galaxy S III landscape - 640 X 360
 Galaxy S5 - 360 X 640
 Galaxy S5 landscape - 640 X 360
+Galaxy S8 - 360 X 740
+Galaxy S8 landscape - 740 X 360
+Galaxy S9+ - 320 X 658
+Galaxy S9+ landscape - 658 X 320
+Galaxy Tab S4 - 712 X 1138
+Galaxy Tab S4 landscape - 1138 X 712
 iPad - 768 X 1024
 iPad landscape - 1024 X 768
+iPad (gen 6) - 768 X 1024
+iPad (gen 6) landscape - 1024 X 768
+iPad (gen 7) - 810 X 1080
+iPad (gen 7) landscape - 1080 X 810
 iPad Mini - 768 X 1024
 iPad Mini landscape - 1024 X 768
 iPad Pro - 1024 X 1366
 iPad Pro landscape - 1366 X 1024
+iPad Pro 11 - 834 X 1194
+iPad Pro 11 landscape - 1194 X 834
 iPhone 4 - 320 X 480
 iPhone 4 landscape - 480 X 320
 iPhone 5 - 320 X 568
@@ -44,6 +56,22 @@ iPhone 11 Pro - 375 X 812
 iPhone 11 Pro landscape - 812 X 375
 iPhone 11 Pro Max - 414 X 896
 iPhone 11 Pro Max landscape - 896 X 414
+iPhone 12 - 390 X 844
+iPhone 12 landscape - 844 X 390
+iPhone 12 Pro - 390 X 844
+iPhone 12 Pro landscape - 844 X 390
+iPhone 12 Pro Max - 428 X 926
+iPhone 12 Pro Max landscape - 926 X 428
+iPhone 12 Mini - 375 X 812
+iPhone 12 Mini landscape - 812 X 375
+iPhone 13 - 390 X 844
+iPhone 13 landscape - 844 X 390
+iPhone 13 Pro - 390 X 844
+iPhone 13 Pro landscape - 844 X 390
+iPhone 13 Pro Max - 428 X 926
+iPhone 13 Pro Max landscape - 926 X 428
+iPhone 13 Mini - 375 X 812
+iPhone 13 Mini landscape - 812 X 375
 JioPhone 2 - 240 X 320
 JioPhone 2 landscape - 320 X 240
 Kindle Fire HDX - 800 X 1280
@@ -75,3 +103,13 @@ Pixel 2 - 411 X 731
 Pixel 2 landscape - 731 X 411
 Pixel 2 XL - 411 X 823
 Pixel 2 XL landscape - 823 X 411
+Pixel 3 - 393 X 786
+Pixel 3 landscape - 786 X 393
+Pixel 4 - 353 X 745
+Pixel 4 landscape - 745 X 353
+Pixel 4a (5G) - 353 X 745
+Pixel 4a (5G) landscape - 745 X 353
+Pixel 5 - 393 X 851
+Pixel 5 landscape - 851 X 393
+Moto G4 - 360 X 640
+Moto G4 landscape - 640 X 360
