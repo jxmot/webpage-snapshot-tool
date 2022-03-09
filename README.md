@@ -77,7 +77,7 @@ module.exports = {
 * `godelay` = the number of milliseconds to wait after loading the page. If `0` then there will be no waiting. The value that goes here depends on the page and any load-time effects it might contain.
 * `views[]` = an array of `{width:?,height:?}` objects. Edit as necessary.
 * `imgpath` = optional, the path to where the snapshots will be saved. The default is './'
-* `imgextn` = options, the extension(type) of image file. The default is '.png'
+* `imgextn` = optional, the extension(type) of image file. The default is '.png'
 
 **NOTES**: 
 1) For most single-page sites `fullpage` should be true.
