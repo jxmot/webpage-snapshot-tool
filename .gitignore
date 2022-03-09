@@ -7,7 +7,7 @@
 #_*.*
 #
 # And the following folder(s) -
-node_modules
+node_modules*
 .vscode
 # misc stuff i want to ignore -
 _*.*
